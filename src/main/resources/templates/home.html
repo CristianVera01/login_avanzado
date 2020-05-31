@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+    <header th:replace="layout/layout :: header"></header>
+    <div class="container">
+        <ul class="list-group" th:each="rol : ${usuario.getAuthorities()}">
+            <li class="list-group-item" th:text="${rol.getAuthority()}"></li>
+        </ul>
+    </div>
+    <footer th:replace="layout/layout :: footer"></footer>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</body>
+</html>
